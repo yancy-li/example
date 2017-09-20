@@ -50,3 +50,5 @@
 5. 修改 `grunt-tasks/plugin.js` 中源代码和 `API` 文件的路径和文件名
 6. 修改 `guide/zh/build/header.html`，将 `HT CustomView 手册` 修改为 `HT XXX 手册`，注意有两处需要修改
 7. 修改 `guide/zh/build/guide.md` 内容
+
+**注意：如果插件工程上传到 `GitHub` 等代码托管网站，不要将 `ht.js` 和 `ht-ui.js` 上传**
