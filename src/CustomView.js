@@ -14,30 +14,8 @@ def(ui.CustomView, ht.ui.View, {
     __shapeWidth: 100,
     __shapeHeight: 100,
 
-    /**
-     * 注册监听器
-     * @override
-     */
-    setUpInteractors: function () {
-        ui.CustomView.superClass.setUpInteractors.call(this);
-        var interactor = this._customViewInteractor;
-        if (!interactor) {
-            interactor = this._customViewInteractor = new ui.CustomViewInteractor(this);
-            interactor.addListeners();
-        }
-    },
-
-    /**
-     * 卸载监听器
-     * @override
-     */
-    tearDownInteractors: function () {
-        ui.CustomView.superClass.tearDownInteractors.call(this);
-        var interactor = this._customViewInteractor;
-        if (interactor) {
-            interactor.removeListeners();
-            delete this._customViewInteractor;
-        }
+    getInteractorClasses: function() {
+        return ui.CustomView.superClass.getInteractorClasses.call(this).concat([ui.CustomViewInteractor]);
     },
 
     /**
